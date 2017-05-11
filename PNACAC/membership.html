@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PNACAC - Membership</title>
+
+	<link rel="stylesheet" type="text/css" href="files/style.css">
+
+	<style>
+		.row {
+			width: 100%;
+		}
+
+		.member-block {
+			width: 100%;
+		    border: 1px solid #E6E6E6;
+		    border-radius: 4px;
+		    margin-bottom: 10px;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    font-size: 12px;
+		    line-height: 16px;
+
+		    float: left;
+		}
+
+		.member-block .title {
+		    background-color: #E6E6E6;
+		    cursor: pointer;
+		    padding: 5px 0px;
+		}
+
+		.member-block .left {
+			float: left;
+			width: 60px;
+			text-align: center;
+		}
+
+		.member-block .right {
+			margin-left: 60px;
+			border-left: 1px solid white;
+			padding-left: 10px;
+		}
+
+		.member-block .body {
+			display: none;
+			padding: 0px 10px;
+		}
+
+		.member-block h4 {
+			margin: 0px;
+			font-size: 14px;
+		}
+
+		.person-block {
+		    border: 1px solid #E6E6E6;
+		    border-radius: 4px;
+		    margin-bottom: 10px;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    font-size: 12px;
+		    line-height: 16px;
+
+		    width: 29.3333%;
+		    margin: 0 2%;
+		    margin-bottom: 30px;
+		    float: left;
+		}
+
+		.person-block .picture {
+			height: 120px;
+			border-bottom: 1px solid #E6E6E6;
+			overflow: hidden;
+		}
+
+		.person-block .picture img {
+			width: 100%;
+		}
+
+		.person-block .body {
+			height: 130px;
+			padding: 0 5px;
+		}
+
+		.person-block .body h4 {
+			font-size: 18px;
+			margin: 15px 0;
+			text-align: center;
+		}
+
+		.person-block .body p {
+			margin: 5px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="container">
+				<a href="index.html"><img class="logo" src="files/pnacac.png" alt="PNACAC" /></a>
+				<div class="login" style="line-height:0px;">
+					<p class="username">	
+				  		<label>Username</label>
+						<input type="text" name="username" class="inputbox" size="18" autocomplete="off" spellcheck="false">
+				    </p>
+				  	<input class="loginbutton button" type="submit" name="Submit" value="Login">
+				  	<p class="password">
+						<label>Password&nbsp;</label>
+						<input type="password" name="passwd" class="inputbox" size="18" autocomplete="off" spellcheck="false">	
+				  	</p>
+					</div>
+			</div>
+		</div>
+
+		<div id="nav">
+			<div class="container">
+				<a href="index.html" class="item">
+					Home
+				</a>
+				<a href="about.html" class="item">
+					About
+				</a>
+				<a href="membership.html" class="item selected">
+					Membership
+				</a>
+				<a href="events.html" class="item">
+					Events
+				</a>
+				<a href="faq.html" class="item">
+					FAQ
+				</a>
+				<a href="contact.html" class="item">
+					Contact
+				</a>
+				<div class="search">
+					<input type="text">
+					<input type="button" value="Search">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div id="left">
+				<div class="sidebox">
+					<h3>Jump to</h3>
+					<a href="#benefits"><div>Benefits</div></a><hr>
+  					<a href="#availability"><div>Availability</div></a><hr>
+					<a href="#deadlines"><div>Deadlines</div></a><hr>
+					<a href="#committee"><div>Committee</div></a><hr>
+					<a href="#questions"><div>Questions</div></a>
+				</div>
+			</div>
+			<div id="body">
+				<h1>Membership</h1>
+				<a name="benefits"></a>
+				<h2>Benefits</h2>
+				<p>As a PNACAC member, you will have:</p>
+				<ul>
+					<li>Access to member's directory</li>
+					<li>...</li>
+				</ul>
+				<a name="availability"></a>
+				<h2>Availability</h2>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$100</h4>
+						</div>
+						<div class="right">
+							<h4>Colleges</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>Colleges will be asked to confirm non-profit status, accreditation, and that they are degree-granting institutions during the application process.</p>
+						<ul>
+							<li>4 year college or university in the PNACAC area (AK, ID, MT, OR, WA)</li>
+							<li>Community College in PNACAC area</li>
+							<li>4-year college or university outside the PNACAC area</li>
+							<li>Community college outside of PNACAC area</li>
+						</ul>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>High Schools</h4>
+						</div>
+					</div>
+					<div class="body">
+						<ul>
+							<li>High school in the PNACAC area (AK, ID, MT, OR, WA)</li>
+							<li>High school outside of PNACAC area</li>
+						</ul>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>School District Office</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p><i>No information.</i></p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>Independent College Counselor</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>Parent members will demonstrate they meet eligibility requirements outlined in the by-laws by providing confirmation of membership in NACAC, HECA, or IECA.</p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>Not-for-Profit Service Organization</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>Organizations whose primary activities consist of working on a multi-state, national or international level and providing counseling, admission, or financial aid services to students or to the college admission counseling or financial aid professions. Organizations will be asked to confirm non-profit status, that they have been in business for at least 3 years, provide direct service to students for free, do not award diplomas, and to provide their website and/or materials during the application process.</p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>Not-for-Profit Community Based Organization</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>Organizations which provide counseling, admission, or financial aid services only to students at the state or local level on an on-going basis. Organizations will be asked to confirm non-profit status, that they have been in business for at least 3 years, provide direct service to students for free, do not award diplomas, and to provide their website and/or materials during the application process. </p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$50</h4>
+						</div>
+						<div class="right">
+							<h4>Non-Affiliated Professionals</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>Persons who were employed at a voting member institution or organization during the current year or immediately preceding membership year who are no longer employed by any member or member-eligible institution</p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$10</h4>
+						</div>
+						<div class="right">
+							<h4>Graduate Student</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p><i>No information.</i></p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$0</h4>
+						</div>
+						<div class="right">
+							<h4>Retired Member</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p><i>No information.</i></p>
+					</div>
+				</div>
+				<div class="member-block">
+					<div class="title">
+						<div class="left">
+							<h4>$0</h4>
+						</div>
+						<div class="right">
+							<h4>Past-Presidents</h4>
+						</div>
+					</div>
+					<div class="body">
+						<p>If past-presidents of PNACAC are currently affiliated with an institution/organization that is a member of PNACAC, they will be automatically granted a non-voting individual membership each year. Past-presidents will retain their voting rights with their institutional membership. If past-presidents of PNACAC are NOT currently affiliated with an institution/organization that is a member of PNACAC, they will automatically be granted an individual voting membership each year.</p>
+					</div>
+				</div>
+				<a name="deadlines"></a>
+				<h2>Deadlines</h2>
+				<p>All admission professionals working at the same institution can be included in the membership application and fee.</p>
+				<p>Membership runs from June 1 - May 31.</p>
+				<ul>
+					<li><strong>RENEW</strong> your membership for 2015 - 2016  Please be sure you are the parent member in order to renew all members of your institution.</li>
+					<li><strong>APPLY</strong> for new membership to PNACAC for 2015 - 2016.</li>
+					<li><strong>ADD</strong> additional individuals to your membership once approved.</li>
+				</ul>
+				<a name="committee"></a>
+				<h2>Committee</h2>
+				<p>The goals of the Membership Committee are to promote and increase membership in PNACAC and advise the Membership Chair regarding membership issues.</p>
+				<div>
+					<div class="person-block">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Sarah Weiss</h4>
+							<p><strong>Assistant Director of College Access &amp; Support</strong></p>
+							<p>Washington Student Achievement Council</p>
+							<p><a href="mailto:SarahWe@wsac.wa.gov">Email</a></p>
+						</div>
+					</div>
+					<div class="person-block">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Kristy Phillips</h4>
+							<p><strong>Admissions Counselor</strong></p>
+							<p>Washington State University &ndash; Tri-Cities</p>
+							<p><a href="mailto:kristy.phillips@tricity.wsu.edu">Email</a></p>
+						</div>
+					</div>
+					<div class="person-block">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Karlen Suga</h4>
+							<p><strong>Assistant Director of Admissions</strong></p>
+							<p>Pacific University<br />
+							Forest Grove, OR 97116</p>
+							<p><a href="mailto:Karlen@pacificu.edu">Email</a></p>
+						</div>
+					</div>
+					<div class="person-block">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Karen Edgar</h4>
+							<p><strong>Independent College Advisor</strong></p>
+							<p>Launching Futures College Consultants</p>
+							<p><a href="mailto:karen@launchingfuturescc.com">Email</a></p>
+						</div>
+					</div>
+					<div class="person-block">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Claudia Cote</h4>
+							<p><strong>Independent College Consultant</strong></p>
+							<p>A College Plan<br />
+							Issaquah, WA 98029</p>
+							<p><a href="mailto:acollegeplan@gmail.com">Email</a></p>
+						</div>
+					</div>
+					<div class="person-block" style="visibility: hidden;">
+						<div class="picture">
+							<img src="files/face.gif" alt="face" />
+						</div>
+						<div class="body">
+							<h4>Claudia Cote</h4>
+							<p><strong>Independent College Consultant</strong></p>
+							<p>A College Plan<br />
+							Issaquah, WA 98029</p>
+							<p><a href="mailto:acollegeplan@gmail.com">Email</a></p>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<a name="questions"></a>
+				<h2>Questions</h2>
+				<p><span><strong>Questions regarding membership?</strong><br />
+				Contact the Membership Chair, Sarah Weiss at <a href="mailto:SarahWe@wsac.wa.gov">SarahWe@wsac.wa.gov</a>.</span></p>
+				<p><span><strong>Questions regarding payment?</strong><br />
+				Contact the Treasurer, Caitlin Kaber at <a href="mailto:cekaber@alaska.edu">cekaber@alaska.edu</a>.</span></p>
+			</div>
+			<div id="right">
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p>&copy; Pacific Northwest Association for College Admission Counseling
+				<br>PO Box 12474 Mill Creek, WA 98082 | Email: <a href="mailto:eapnacac@gmail.com">eapnacac@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="files/scripts.js"></script>
+
+	<script>
+		$(".member-block .title").on('click', function() {
+			$(this).parent().find(".body").slideToggle();
+		});
+	</script>
+</body>
+
+</html>

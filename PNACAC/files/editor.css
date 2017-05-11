@@ -1,0 +1,1583 @@
+/* removed these to accommodate older existing tables: table, caption, tbody, tfoot, thead, tr, th, td - also removed sup & sub */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+}
+/* tds have a 1px padding by default - reset from above */
+td {padding: 0;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+/* remember to define focus styles */
+:focus {outline: 0;}
+/* remember to highlight inserts somehow */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+
+
+
+/* ------------------------------------------------------- */
+/* ------ ABOVE is the RESET - BELOW is the REBUILD ------ */
+/* ------------------------------------------------------- */
+
+blockquote {
+    padding: 18px;
+    margin: 18px 36px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-bottom-color: #aaa;
+}
+
+hr {border: 0; background: #eee; color: #eee; height: 2px; margin: 18px 0;}
+
+ul {list-style-type: disc;}
+ul ul {list-style-type: circle;}
+ul ul ul {list-style-type: square;}
+ul ul ul ul {list-style-type: circle;}
+ol {list-style-type: decimal;}
+ol ol {list-style-type: lower-alpha;}
+ol ol ol {list-style-type: decimal;}
+ol ol ol ol {list-style-type: lower-alpha;}
+ul, ol {margin: 18px 0 18px 40px;}
+ul ul, ul ol, ol ol, ol ul {margin: 6px 0 6px 40px;}
+
+/* prevents a 15px space at the bottom of single articles - blog separators are reset later */
+span.article_separator {display: none;}
+
+/* joomla structure protection */
+table.contentpaneopen {width: 100%;}
+.contentpaneopen td {padding: 0;}
+
+/* tables in content */
+.contentpaneopen table {margin: 0px 0px 18px 0px;}
+.contentpaneopen table td, #tinymce table td {padding: 9px; border: 0px solid #ddd; vertical-align: top;}
+.contentpaneopen table th, #tinymce table th {background: #ddd; color: #333; border: 0px solid #ddd; padding: 9px 0;}
+/* borderless option */
+.contentpaneopen table.borderless td {border: 0; padding: 0;}
+#tinymce table.borderless td {border: 1px dotted #e0e0e0; padding: 0;}
+
+/* old form protection */
+#formContainer table {border-collapse: separate;}
+#formContainer table td {font-size: 13px;}
+
+
+
+/* --------------------------------------------- */
+/* ------ TYPOGRAPHY --------------------------- */
+/* --------------------------------------------- */
+
+body, #tinymce td, #content-padding input, input {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Droid Sans', Arial, sans-serif;
+    color: #333;
+}
+
+/* inputs outside of the content area are normally smaller - leave the line-height: normal */
+input {font-size: 11px; line-height: normal;}
+
+p {margin: 0px 0px 18px;}
+a, a:visited {text-decoration: none;}
+a:hover, a:focus, a:active {text-decoration: underline;}
+
+/* if you have a custom font for headings, you should probably set it for these also */
+td.contentheading {}
+
+h1 {
+    font-size: 29px;
+    line-height: 36px;
+    margin: 18px 0 9px;
+}
+h2 {
+    font-size: 22px;
+    line-height: 27px;
+    margin: 18px 0 6px;
+}
+h3 {
+    font-size: 19px;
+    line-height: 27px;
+    margin: 18px 0 0;
+}
+h4 {
+    font-size: 18px;
+    line-height: 18px; 
+     margin: 18px 0 0;
+}
+h5 {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 18px 0 0;
+}
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 18px 0 0;
+}
+
+h1:first-child, h2:first-child, h3:first-child,
+h4:first-child, h5:first-child, h6:first-child,
+ul:first-child, ol:first-child {margin-top: 0px;}
+
+
+
+/* ---------------------------------- */
+/* ------ MISC TOOLS ---------------- */
+/* ---------------------------------- */
+
+.clarence {clear: both !important;}
+.spacey {margin: 0px 3px;} /* often wraps |s in link lists or small info */
+.hidden {display: none !important;}
+.float-left {float: left !important;}
+.float-right {float: right !important;}
+.no-float {float: none !important;}
+.no-margin {margin: 0 !important;}
+.no-left-margin {margin-left: 0 !important;}
+.no-right-margin {margin-right: 0 !important;}
+.no-top-margin {margin-top: 0 !important;}
+.no-bottom-margin {margin-bottom: 0 !important;}
+.v-margin-10 {margin-top: 10px !important; margin-bottom: 10px !important;}
+.v-margin-20 {margin-top: 20px !important; margin-bottom: 20px !important;}
+.h-margin-10 {margin-left: 10px !important; margin-right: 10px !important;}
+.h-margin-20 {margin-left: 20px !important; margin-right: 20px !important;}
+.top-margin-10 {margin-top: 10px !important;}
+.top-margin-20 {margin-top: 20px !important;}
+.bottom-margin-10 {margin-bottom: 10px !important;}
+.bottom-margin-20 {margin-bottom: 20px !important;}
+/* '.home' on the default menu item + '.hide-on-home' on the module */
+body.home .hide-on-home {display: none !important;}
+.bulletproof {list-style: none !important; list-style-position: outside !important /* IE 7 indentation fix */;}
+table.center-table {margin: 0 auto;}
+
+
+
+/* ----------------------------------- */
+/* ------ LAYOUT --------------------- */
+/* ----------------------------------- */
+
+/* most major sections have 3 extra interior divs for flexibility */
+/* if present, they are classed extra-1, extra-2, and extra-3 */
+
+/* #bkg is the body - refer to it with this id to avoid inheritance by tinymce */
+#bkg {}
+
+#site-top-1 {}
+#site-top-2 {}
+#site-top-3 {}
+/* innermost element in the 3 site-top-#s - allows a width inside full-width stripes */
+.site-top-width {width: 980px; margin: 0 auto;}
+
+/* site-wrap allows for a classic, page-type container */
+/* it surrounds everything but site-top-#s & site-bottom-#s */
+#site-wrap {}
+
+#over-header-wrap {}
+#over-header-1 {}
+#over-header-2 {}
+#over-header-3 {}
+
+#header-wrap {}
+#header {}
+
+#under-header-wrap {}
+#under-header-1 {}
+#under-header-2 {}
+#under-header-3 {}
+
+#middle-section-wrap {}
+#middle-section {
+    /* relates to the content and bar width - changing this will require adjustments elsewhere */
+    padding: 20px;
+}
+
+#content-wrap {
+    /* helps clear floats within content */
+    overflow: hidden;
+}
+
+#content-padding {}
+
+#component-wrap {}
+
+#over-content-1 {}
+#over-content-2 {}
+#over-content-3 {}
+
+#under-content-1 {}
+#under-content-2 {}
+#under-content-3 {}
+
+#over-footer-wrap {}
+#over-footer-1 {}
+#over-footer-2 {}
+#over-footer-3 {}
+
+#footer-wrap {}
+#footer {}
+
+#site-bottom-1 {}
+#site-bottom-2 {}
+#site-bottom-3 {}
+/* similar to site-top-width */
+.site-bottom-width {width: 980px; margin: 0 auto;}
+
+
+
+/* -------------------- */
+/* - bars and related - */
+/* -------------------- */
+
+/* content width with both bars */
+#l-r-mid #content-wrap {float: left; width: 460px;}
+/* content width with 1 bar */
+#l-mid #content-wrap {float: left; width: 700px;}
+/* content width with 1 bar */
+#r-mid #content-wrap {width: 700px;}
+#left-bar {
+    float: left;
+    width: 220px;
+    margin: 0px 20px 0px 0px;
+}
+#right-bar {
+    float: right;
+    width: 220px;
+}
+.side-bar, .side-bar p {font-size: 12px; line-height: 16px;}
+
+/* hide bars with page class suffix */
+body.hide-both #left-bar, .hide-both #right-bar {display: none;}
+/* override width based on page class */
+body.hide-both #l-r-mid #content-wrap,
+body.hide-both #l-mid #content-wrap,
+body.hide-both #r-mid #content-wrap,
+body.hide-left #l-mid #content-wrap,
+body.hide-right #r-mid #content-wrap {width: 940px;}
+/* hide left bar only */
+body.hide-left #left-bar {display: none;}
+body.hide-left #l-r-mid #content-wrap {width: 700px;}
+body.hide-left #l-mid #content-wrap {width: 940px;}
+/* hide right bar only */
+body.hide-right #right-bar {display: none;}
+body.hide-right #l-r-mid #content-wrap {width: 700px;}
+body.hide-right #r-mid #content-wrap {width: 940px;}
+
+
+
+/* -------------------------------------- */
+/* ------ MODULES-POSITIONS BASICS ------ */
+/* -------------------------------------- */
+
+/* clearing floats on the near-content positions */
+/* no submenu-nav should be here so we can clear floats this way */
+#over-content-1 {overflow: hidden;}
+#over-content-2 {overflow: hidden;}
+#over-content-3 {overflow: hidden;}
+#under-content-1 {overflow: hidden;}
+#under-content-2 {overflow: hidden;}
+#under-content-3 {overflow: hidden;}
+
+/* assume if something is set to a middle position that it should be centered */
+.middle-group {text-align: center;}
+
+.left-group .moduletable {float: left;}
+.right-group .moduletable {float: right;}
+
+/* unset the default floating to stack modules instead */
+.right-group .stack {clear: right;}
+.left-group .stack {clear: left;}
+
+/* aesthetic spacing for modules in the 'stripes' */
+.left-group .moduletable, .right-group .moduletable, .middle-group .moduletable {}
+/* unset that above margin for menus */
+.moduletable.mc-mainmenu {margin: 0;}
+
+.side-bar .moduletable {
+    float: left; /* needed for side-menu popouts */
+    clear: left; /* needed for side-menu popouts */
+    margin-top: 36px;
+    position: relative;
+    background: #eee;
+    border-radius: 4px;
+    padding: 10px;
+    width: 200px;
+}
+
+/* unset the top margin for the topmost modules */
+.side-bar .moduletable:first-child {margin-top: 0;}
+
+.side-bar .moduletable h3:first-child {
+    font-size: 16px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 9px;
+}
+.side-bar p {margin: 0px 0px 9px;}
+
+
+
+/* ------------------------------------- */
+/* ------ SPECIFIC MODULE STYLES ------- */
+/* ------------------------------------- */
+
+/* most modules have default styling */
+/* relevant to where they are most commonly found */
+/* for the majority, that means that default styling */
+/* is for a side bar - styling for other positions must be specific */
+
+/* --- any list within a module, including: most read articles, latest news, related articles --- */
+.moduletable ul {
+    margin: 0; list-style: square inside none;
+}
+
+/* --- breadcrumbs --- */
+.moduletable.mc-breadcrumbs {
+    background: #e9e9e9;
+    padding: 10px;
+    border-radius: 3px;
+}
+/* the container */
+.breadcrumbs {}
+/* the links */
+a.pathway {}
+/* the default images if no separators set in module parameters */
+a.pathway img {}
+
+/* nivo slider main module - needs width for proper image resizing in Firefox */
+.moduletable.slider-width {width: 100%;}
+
+/**** Fix for Nivo Slider with links on the img tag in IE ****/
+.nivoSlider a.nivo-imageLink{background: white; filter: alpha(opacity=0); opacity: 0;}
+
+/* --- syndicate (feed push from blog layouts) --- */
+.mc-syndicate img {vertical-align: text-bottom;}
+
+/* --- login button --- */
+#under-header-2 #mcSimpleLogin {
+    display: block;
+    background: url(/jmc-assets/gradients-v/black-bottom-30.png) 0 -500px repeat-x;
+    height: 30px; line-height: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 0px 9px;
+    margin: 15px 15px 0px 0px;
+    text-shadow: 0px 1px 1px black;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.6) inset;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+#under-header-2 #mcSimpleLogin:hover {
+    background-color: #333; box-shadow: 0px 1px 9px rgba(0,0,0,0.9) inset;
+}
+
+/* --- login box (side bars) --- */
+
+/* the login component shares these ids and classes so we must specify */
+/* location-based styling to avoid having to reset styles below for the component */
+
+/* all inputboxes, even the checkbox which needs resetting later */
+.side-bar #form-login .inputbox {
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px black inset;
+    padding: 4px 3px;
+    margin: 2px 0px 0px;
+    width: 93%;
+}
+        /* entire username section */
+.side-bar #form-login-username {}
+/* username label */
+.side-bar #form-login-username label {}
+/* username inputbox */
+.side-bar #modlgn_username {}
+        /* entire password section */
+.side-bar #form-login-password {}
+/* password label */
+.side-bar #form-login-password label {}
+/* password inputbox */
+.side-bar #modlgn_passwd {}
+        /* entire remember me section */
+.side-bar #form-login-remember {}
+/* remember label */
+.side-bar #form-login-remember label {font-size: 10px;}
+/* remember inputbox */
+.side-bar #form-login #modlgn_remember {width: auto; height: auto; vertical-align: bottom; border: 0; border-radius: 0; box-shadow: none; background: transparent;}
+/* login submit button */
+.side-bar #form-login .button {width: 33%; cursor: pointer;}
+
+/* --- login box (header) --- */
+
+/* the login component shares these ids and classes so we must specify */
+/* location-based styling to avoid having to reset styles below for the component */
+
+#header .moduletable.mc-login {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    border-radius: 4px;
+    width: 360px; height: 80px;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0px;
+    position: absolute;
+    right: 30px; top: 30px;
+}
+
+#header .moduletable.mc-login h3:first-child {
+    display: none;
+}
+
+/* all inputboxes, even the checkbox which needs resetting later */
+#header #form-login .inputbox {
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px black inset;
+    padding: 4px 3px;
+    margin: 0px;
+    width: 95%;
+}
+
+/* entire username section */
+#header #form-login-username {
+    width: 49%;
+    float: left;
+    margin: 0px 0px 10px;
+}
+/* username label */
+#header #form-login-username label {font-size: 12px; font-weight: bold;}
+/* username inputbox */
+#header #modlgn_username {}
+
+/* entire password section */
+#header #form-login-password {
+    width: 49%;
+    float: right;
+}
+/* password label */
+#header #form-login-password label {font-size: 12px; font-weight: bold;}
+/* password inputbox */
+#header #modlgn_passwd {}
+
+/* entire remember me section */
+#header #form-login-remember {
+    clear: both;
+    padding-top: 2px;
+    position: absolute;
+    left: 5px; bottom: 5px;
+}
+/* remember label */
+#header #form-login-remember label {font-size: 10px;}
+/* remember checkbox */
+#header #form-login #modlgn_remember {width: auto; height: auto; vertical-align: middle; border: 0; border-radius: 0; box-shadow: none; background: transparent;}
+
+/* login submit button */
+#header #form-login .button {
+    width: 33%;
+    cursor: pointer;
+    position: absolute;
+    right: 5px; bottom: 5px;
+}
+
+/* --- user greeting & links (a custom html widget normally used in concert with the header login box) --- */
+#header .mc-user-greeting {
+    width: 360px; height: 55px;
+    overflow: hidden;
+    position: absolute;
+    right: 35px; top: 35px;
+    margin: 0;
+}
+#header .mc-user-greeting p.greeting {font-size: 12px;}
+#header .mc-user-greeting .name {}
+#header .mc-user-greeting ul.links {
+    font-size: 11px;
+    margin: 8px 0 0; padding: 0; list-style: none;
+    overflow: hidden;
+    
+}
+#header .mc-user-greeting ul.links li {
+    float: left;
+    border-left: 1px solid #bbb;
+    padding: 0px 5px;
+}
+#header .mc-user-greeting ul.links li:first-child {border: 0; padding-left: 0;}
+#header .mc-user-greeting ul.links li a, #header .mc-user-greeting ul.links li a:visited {
+    text-decoration: none;
+}
+
+#header .mc-user-greeting ul.links li a:hover, #header .mc-user-greeting ul.links li a:active, 
+    #header .mc-user-greeting ul.links li a:focus {
+    text-decoration: underline;
+}
+
+/* --- sponsor banners --- */
+.bannergroup {width: 100%;}
+.banneritem {width: 100%;}
+.banneritem img {width: 100%; height: auto;}
+
+/* --- site search & member (quick) search --- */
+.moduletable.mc-search, .moduletable.mc-quicksearch {overflow: hidden; width: 200px;}
+.moduletable.mc-search div, .moduletable.mc-quicksearch div {
+    background: #eee;
+    background: rgba(255,255,255,0.6);
+    overflow: hidden;
+    border: 1px solid #bbb;
+    position: relative;
+    height: 38px;
+}
+.moduletable.mc-search .inputbox, .moduletable.mc-quicksearch .inputbox {
+    padding: 0px 0px 0px 9px;
+    margin: 10px 0px 0px;
+    border: 0;
+    width: 68%;
+    height: 10px;
+    line-height: 20px;
+    float: left;
+    background: transparent;
+}
+.moduletable.mc-search a, .moduletable.mc-quicksearch a {
+    display: block;
+    text-indent: 110%; overflow: hidden; white-space: nowrap;
+    width: 25px; height: 18px;
+    text-align: center;
+    line-height: 20px;
+    background: url(/jmc-assets/icons/magnify-black.png);
+    color: white;
+    font-size: 11px;
+    border-radius: 3px;
+    position: absolute; right: 10px; top: 10px;
+    text-decoration: none;
+}
+.moduletable.mc-search a:hover, .moduletable.mc-quicksearch a:hover {background-position: left bottom;}
+
+/* --- pbmc --- */
+#pbmc-wrap {padding: 20px 0px;}
+#pbmc {
+    display: block;
+    margin: 0 auto;
+    width: 170px; height: 25px;
+    background: url(/jmc-assets/pbmc/black.png) no-repeat;
+    text-decoration: none;
+    text-indent: 110%; overflow: hidden; white-space: nowrap;
+}
+#pbmc:hover {background-position: bottom;}
+
+/* --- minical --- */
+.moduletable.mc-minical {text-align: center;}
+.moduletable.mc-minical h3 {text-align: left;}
+#calendarFrame {background: transparent !important;}
+#calendarFrame body {background: transparent !important;}
+
+/* --- poll module --- */
+.moduletable.mc-poll {padding-bottom: 2px;} /* keep the inputs inside for some browsers */
+.moduletable.mc-poll td {text-align: left;} /* unset the default center of some browsers */
+.moduletable.mc-poll td.sectiontableentry2 input {margin-right: 9px;}
+.moduletable.mc-poll .pollstableborder {margin-bottom: 18px;}
+
+/* --- news feed --- */
+/* this table and ul inherits the general module class and needs some resetting */
+/* use important or prefix these with the side bar ids */
+.moduletable.mc-feed .mc-feed {
+    background: transparent !important;
+    width: auto !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+/* if .bulletproof is applied to the news feed, this will add margin below each item */
+.moduletable.mc-feed.bulletproof .mc-feed li {margin: 0 0 10px 0;}
+
+/* --- single or multiple cta buttons & default mcSimpleLogin login button (location specific styles can override this default) --- */
+.moduletable.button-list p {margin: 0;} /* account for accidental p's wrapped around the ul */
+.moduletable.button-list ul {
+    list-style: none;
+    margin: 0;
+}
+.moduletable.button-list ul li {margin-top: 6px;}
+.moduletable.button-list ul li:first-child {margin: 0;}
+.moduletable.button-list ul li a, .moduletable.button-list a:visited, #mcSimpleLogin, #mcSimpleLogin:visited {
+    background: #666 url(/jmc-assets/gloss/30.png) left bottom repeat-x;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+.moduletable.button-list ul li:hover a, #mcSimpleLogin:hover {
+    background-color: #333 !important; /* necessary to allow easy-reset below */
+    background-position: left -28px;
+}
+
+/* --- simple menu --- */
+/* put this class on a menu to achieve a clean, 1-level, horizontal menu */
+.simple-menu {margin: 0; list-style: none; float: left; border-right: 1px solid #555; border-color: rgba(0,0,0,0.33);}
+.simple-menu li {
+    margin: 0; list-style: none; float: left;
+    border-left: 1px solid #555; border-color: rgba(0,0,0,0.33);
+    padding: 0px 10px;
+    line-height: 18px;
+}
+.simple-menu li:first-child {}
+.simple-menu li a, .simple-menu li a:visited {text-decoration: none; color: #333;}
+.simple-menu li a:hover, .simple-menu li a:active, .simple-menu li a:focus {color: #333;}
+
+/* --- social network menu --- */
+#socnets {margin: 0; padding: 0; list-style: none; float: left;}
+#socnets li {margin: 0; padding: 0; float: left;}
+#socnets li a, #socnets li a:visited {
+    display: block;
+    width: 32px; height: 32px;
+    text-indent: 110%; overflow: hidden; white-space: nowrap;
+    background: url(/jmc-assets/icons/socnets-color-circle.png);
+    margin-left: 9px;
+    opacity: 1;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+#socnets li a:hover, #socnets li a:active {opacity: 1; background-image: url(/jmc-assets/icons/socnets-color-circle.png);}
+/* if these ids get out of sync with the source, they can be commented out and hardcoded */
+/* #socnets li.item201 a {background-position: 0px 0px;}/*blog*/
+/* #socnets li.item327 a {background-position: 0px -100px;}/*email*/
+#socnets li.item120 a {background-position: 0px -200px;}/*facebook*/
+/* #socnets li.item204 a {background-position: 0px -300px;}/*feed*/
+/* #socnets li.item205 a {background-position: 0px -400px;}/*flickr*/
+#socnets li.item122 a {background-position: 0px -500px;}/*linkedin*/
+/* #socnets li.item330 a {background-position: 0px -600px;}/*location*/
+/* #socnets li.item208 a {background-position: 0px -700px;}/*pinterest*/
+#socnets li.item121 a {background-position: 0px -800px;}/*twitter*/
+/* removed the twitter t version when they updated their bird mark */
+#socnets li.item219 a {background-position: 0px -900px;}/*vimeo*/
+/* #socnets li.item212 a {background-position: 0px -1000px;}/*wordpress*/
+/* #socnets li.item213 a {background-position: 0px -1100px;}/*youtube*/
+/* #socnets li.item214 a {background-position: 0px -1200px;}/*googleplus*/
+/* #socnets li.item215 a {background-position: 0px -1300px;}/*myspace*/
+#socnets li.item123 a {background-position: 0px -1400px;}/*instagram*/
+
+
+
+/* ----------------------------------------- */
+/* ------ FIXES and PREVENTIONS ------------ */
+/* ----------------------------------------- */
+
+/* its easy to end up with unwanted paragraphs after working in an online editor */
+/* zeroing out these ps helps deal with the most common occurrences of that */
+#header p {margin: 0;}
+#footer p {margin: 0;}
+
+
+
+/* ----------------------------------------- */
+/* ------ HORIZONTAL MENU with SUBS -------- */
+/* ----------------------------------------- */
+
+/* ------------------------ */
+/* --- essential styles --- */
+/* ------------------------ */
+
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 99;
+}
+
+.sf-menu ul {
+    position: absolute;
+    top: -999em;
+    /* left offset of submenus need to match (see below) */
+    width: 220px;
+}
+.sf-menu ul li {width: 100%;}
+.sf-menu li:hover {
+    /* fixes IE7 'sticky bug' */
+    visibility: inherit;
+}
+.sf-menu li {
+    float: left;
+    position: relative;
+    z-index: 99;
+}
+.sf-menu a, .sf-menu .separator {
+    display: block;
+    position: relative;
+}
+.sf-menu li:hover ul {
+    left: 0;
+    top: 50px; /* match top ul list item height */
+    z-index: 99;
+}
+
+    /* when h-menu is right-aligned, popouts should go left */
+    .right-group .sf-menu li:hover ul {
+        left: auto;
+        right: 0;
+    }
+
+ul.sf-menu li:hover li ul {top: -999em;}
+ul.sf-menu li li:hover ul {
+    left: 220px; /* match ul width */
+    top: 0;
+}
+
+    .right-group ul.sf-menu li li:hover ul {
+        left: auto;
+        /* match ul width - to keep subs in viewport */
+        right: 220px;
+    }
+
+
+
+/* ------------------- */
+/* --- custom skin --- */
+/* ------------------- */
+
+.sf-menu {
+    float: left;
+}
+
+/* 1st level */
+.sf-menu > li {}
+
+.sf-menu li > a, .sf-menu li > .separator {
+    text-decoration:none;
+    padding: 0px 10px;
+    height: 50px;
+    border: 0;
+    line-height: 50px;
+    color: white;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.33);
+    border-right: 1px solid #333; /* fallback border color for browsers that can't handle rgba in the next line */
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+.sf-menu > li:first-child > a, .sf-menu > li:first-child > .separator {}
+
+.sf-menu > li:hover > a, .sf-menu > li:hover > .separator {
+    background: #444;
+    border-color: #333;
+}
+
+.sf-menu > li.active > a, .sf-menu > li.active > .separator {
+    background: url(/jmc-assets/solids/black-30.png);
+    border-color: #333;
+}
+
+/* 2nd level */
+.sf-menu li li {}
+.sf-menu li li:first-child {}
+.sf-menu li li > a, .sf-menu li li > .separator {
+    font-size: 11px;
+    height: 30px;
+    line-height: 30px;
+    color: #b9b9b9;
+    background: #444;
+    padding: 0 10px;
+}
+.sf-menu li li:hover > a {
+    background-color: #333;
+    color: white;
+}
+
+.sf-menu li li.active > a, .sf-menu li li.active > .separator {text-decoration: underline;}
+
+/* 3rd level */
+.sf-menu li li li a, .sf-menu li li li .separator {
+    color: #b0b0b0;
+    background: #333;
+}
+.sf-menu li li li:hover a {
+    color: white;
+    background: #222;
+}
+
+
+/* ----------------------------------- */
+/* --- extra horizontal menu stuff --- */
+/* ----------------------------------- */
+
+/* --- separator style refinement --- */
+.sf-menu li .separator {cursor: default;}
+/* this gets inherited by deeper separators - next line overrides the color for those deeper separators */
+.sf-menu li li .separator {color: #808080; text-align: right;}
+.sf-menu li li li .separator {color: #696969;}
+
+/* controls the auto-generated arrow markup for menu items that contain dropdowns */
+/*.sf-sub-indicator {display: none;}*/
+
+/* --- centers the menu module when positioned in a middle position --- */
+.middle-group {text-align: center;}
+.middle-group .sf-menu {
+    float: none;
+    display: inline-block;
+    margin: 0 auto;
+    *display: inline;
+    *zoom: 1;
+}
+.middle-group .sf-menu a, .middle-group .sf-menu .separator {text-align: left;}
+
+
+
+/* ------------------------------------- */
+/* ------ VERTICAL MENU WITH SUBS ------ */
+/* ------------------------------------- */
+
+/* this lacks ul at the start of the selector, so the styles from the sf-menu CSS override it where needed */
+
+/* ------------------ */
+/* --- essentials --- */
+/* ------------------ */
+
+.sf-vertical, .sf-vertical li {
+    width: 220px;
+    z-index: 90;
+}
+.sf-vertical {
+    z-index: 90;
+    top: 0;
+}
+.sf-vertical li:hover ul {
+    left: 220px; /* match ul width */
+    top: 0;
+}
+        /* flyout the other way when in right-bar */
+        #right-bar .sf-vertical li:hover ul {left: auto; right: 220px;}
+
+/* ------------------------------------------------------------------- */
+/* --- custom styles - (reset styles from sf-menu above if needed) --- */
+/* ------------------------------------------------------------------- */
+
+/* 1st */
+.sf-vertical {
+    padding: 0;
+    background: none;
+    font-size: 11px;
+}
+.sf-vertical li {border-top: 1px solid #444;}
+.sf-vertical li:first-child {border: 0;}
+/* include the .active class to undo styles set in the h-menu */
+/* rebuild these .actives later if needed */
+.sf-vertical li a, .sf-vertical li .separator, 
+.sf-vertical li.active a, .sf-vertical li.active .separator {
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    color: #bbb;
+    background: #333 url(/jmc-assets/gradients-h/black-left-10.png);
+    text-shadow: 0px 1px 0px black;
+}
+.sf-vertical li:hover > a {
+    background: #222 url(/jmc-assets/gradients-h/black-left-10.png);
+    color: white;
+}
+        /* if on the right */
+        #right-bar .sf-vertical li > a, #right-bar .sf-vertical li > .separator {
+            background: #333 url(/jmc-assets/gradients-h/black-right-10.png);
+        }
+        #right-bar .sf-vertical li:hover > a {
+            background: #222 url(/jmc-assets/gradients-h/black-right-10.png);
+        }
+.sf-vertical li .separator {color: #808080; text-align: right;}
+
+/* 2nd */
+.sf-vertical li li a, .sf-vertical li li .separator {
+    color: #aaa;
+    background: #222;
+}
+.sf-vertical li li:hover > a {
+    color: #fff;
+    background: #222 url(/jmc-assets/gradients-h/black-right-50.png);
+}
+/* unclear why important is needed on these separators but it is */
+.sf-vertical li li .separator {color: #707070 !important;}
+
+        /* if on the right */
+        #right-bar .sf-vertical li li a, #right-bar .sf-vertical li li .separator {
+            color: #aaa;
+            background: #222;
+        }
+        #right-bar .sf-vertical li li:hover > a {
+            color: #fff;
+            background: #222 url(/jmc-assets/gradients-h/black-left-50.png);
+        }
+
+/* 3rd */
+.sf-vertical li li li a, .sf-vertical li li li .separator {
+    color: #aaa;
+    background: #111;
+}
+
+.sf-vertical li li li:hover > a {
+    color: white;
+    background: #111 url(/jmc-assets/gradients-h/white-right-10.png);
+}
+/* unclear why important is needed on these separators but it is */
+.sf-vertical li li li .separator {color: #696969 !important; background: #111 !important;}
+
+
+        /* if on the right */
+        #right-bar .sf-vertical li li li a {
+            color: #aaa;
+            background: #111;
+        }
+        #right-bar .sf-vertical li li li:hover > a {
+            color: white;
+            background: #111 url(/jmc-assets/gradients-h/white-left-10.png);
+        }
+/* active items */
+.sf-vertical li.active > a {text-decoration: underline;}
+
+
+/* ---------------------------------------------- */
+/* ------ VERTICAL MENU TREE STYLE -------------- */
+/* ---------------------------------------------- */
+/* --- some of these importants are essential --- */
+/* --- some are just to avoid a mess ------------ */
+
+/* unset all the superfish menu tricks except display: none */
+.tree ul {
+    display: none !important;
+    visibility: visible !important;;
+    position: static; float: none;
+    left: auto; right: auto; top: auto; bottom: auto;
+    margin: 0; padding: 0;
+    list-style: none !important;
+}
+
+/* --- active 1st level --- */
+.tree > li.parent.active {border-color: #999;}
+.tree > li.parent.active > a {background: #666 url(/jmc-assets/gradients-v/black-bottom-small-60.png) bottom repeat-x !important;}
+
+/* --- 2nd level --- */
+/* first, display the nested ul */
+.tree > li.parent.active > ul {display: block !important;}
+.tree > li.parent li {border-top: 1px solid #444;}
+.tree > li.parent li:first-child {border: 0;}
+.tree > li.parent li a {padding-left: 20px;}
+.tree li.parent li:first-child a {
+    background: #222 url(/jmc-assets/gradients-v/black-top-small-100.png) repeat-x !important;
+}
+.tree li.parent li:hover a {background: black !important;}
+
+
+/* --- NOTE: no 3rd level --- */
+/* tree menus (other than kid menus which take care of themselves below) should never go beyond 2nd level */
+.tree .active .active ul {display: none !important;}
+
+
+
+/* --------------------------------- */
+/* ------ KIDS MENU ---------------- */
+/* --------------------------------- */
+
+/* most styling is done above in concert with .tree */
+/* kids menu is a tree menu with a class of .kids */
+
+/* we only want to see the active item and its children so first we hide it all */
+.kids li {display: none;}
+/* then restore the active item and its children */
+.kids li.active, .kids li.active li {display: block;}
+/* then re-hide everything beyond 2nd level just to be safe */
+.kids li.active ul ul {display: none;}
+.kids > li.parent.active {border: 0;}
+/* we need the 'containing' parent to mimic the module headers */
+.kids > li.parent.active > a, .kids > li.parent.active > .separator {
+    font-size: 14px; font-weight: normal;
+    border-radius: 4px 4px 0 0;
+    background: #4080ff url(/jmc-assets/gradients-v/black-bottom-small-50.png) bottom repeat-x !important;
+    color: #fff;
+    cursor: default;
+    border: 0;
+    text-decoration: none;
+}
+.kids > li.parent.active li a, .kids > li.parent.active li .separator {
+    padding-left: 10px;
+    color: #bbb;
+    background: #333 url(/jmc-assets/gradients-h/black-left-10.png) !important;
+    text-shadow: 0px 1px 0px black;
+}
+.kids > li.parent.active li:hover a {background: #111 !important;}
+        #right-bar .kids > li.parent.active li a, #right-bar .kids > li.parent.active li .separator {
+            background: #333 url(/jmc-assets/gradients-h/black-right-10.png) right !important;
+        }
+        #right-bar .kids > li.parent.active li:hover a {
+            background-color: #222 !important;
+        }
+/* sf-auto-generated arrow markup for parents */
+.kids .sf-sub-indicator {display: none;}
+
+
+/* ------------------------- */
+/* ------ SEARCH PAGE ------ */
+/* ------------------------- */
+#mc-search-form .mc-button:hover {background: #333; color: white;}
+.mc-result .highlight {background: #ff9; padding: 0px 5px;} /* text highlight on search terms in results */
+
+
+
+/* ----------------------------------------- */
+/* ------ LOGIN PAGE ----------------------- */
+/* ----------------------------------------- */
+/* precede with #content-padding to ensure we don't affect the login module */
+#content-padding #form-login {width: 460px; position: relative;}
+#content-padding #form-login label {font-weight: bold; color #333;}
+#content-padding #form-login input.inputbox {
+    width: 446px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background: #fafafa;
+    padding: 6px;
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+}
+#content-padding #form-login input.inputbox:hover {border-color: #666; box-shadow: 0px 0px 6px #aaa inset;}
+
+#content-padding #form-login input.inputbox:focus {border-color: #000; background: #333; color: white; box-shadow: none;}
+
+#content-padding #form-login #form-login-remember label {font-size: 0.8em; font-weight: normal; color: #333;}
+
+#content-padding #form-login #modlgn_remember {width: auto; border: 0;}
+#content-padding #form-login #modlgn_remember:hover {box-shadow: none;}
+#content-padding #form-login #modlgn_remember:focus {background: #333; color: white; box-shadow: none;}
+
+#content-padding #form-login input.button {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #fff;
+    text-decoration: none;
+    background: #333;
+    padding: 6px 18px;
+    border: 0;
+    border-radius: 4px;
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+}
+/** Added for Forgot UN and PW hover **/
+#content-padding #form-login .forgot-username:hover,
+#content-padding #form-login .forgot-password:hover,
+/** End UN and PW hover */
+#content-padding #form-login input.button:hover {
+    background: #333;
+    cursor: pointer;
+}
+
+#content-padding #form-login .forgot-password {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #888;
+    text-decoration: none;
+    background: #fafafa;
+    padding: 6px 18px;
+    position: absolute;
+    right: 0; bottom: 0;
+    border-radius: 4px;
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+}
+/** Added to style forgot password button **/
+#content-padding #form-login .forgot-username, #content-padding #form-login .forgot-password, #content-padding #form-login input.button {
+    line-height: 18px;
+}
+#content-padding #form-login .forgot-username, #content-padding #form-login .forgot-password {
+    position: relative;
+    bottom: auto;
+    top: -30px;
+    margin-left: 20px;
+    float: right;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+    border-radius: 4px;
+    padding: 6px 18px;
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+    display: block;
+}
+#content-padding #form-login .forgot-username:hover, /* End Password Styling */
+#content-padding #form-login .forgot-password:hover {
+    background: #333;
+    color: white;
+}
+
+
+
+/* -------------------------------------------------- */
+/* ------ GENERAL ARTICLE STYLES -------------------- */
+/* -------------------------------------------------- */
+/* some of these styles apply to the various article-related layouts like blogs but they cascade from here */
+
+/* logged-in admin edit tooltip - this is the tooltip itself, the button is in the next section */
+div.tool-tip {z-index: 99999;}
+div.tip-top {z-index: 99999;}
+div.tip-text {
+    font-size: 11px;
+    color: #ddd;
+    background: #333;
+    border: 2px solid #555;
+    border-top-width: 1px;
+    padding: 6px 9px 9px 9px;
+    z-index: 99999;
+    box-shadow: 0px 3px 18px rgba(0,0,0,0.35);
+}
+div.tip-title {
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    background: #333;
+    border: 2px solid #555;
+    border-bottom-width: 1px;
+    padding: 9px 9px 6px 9px;
+    z-index: 99999;
+    box-shadow: 0px 3px 18px rgba(0,0,0,0.35);
+}
+
+/* article icons, pdf, print, email */
+.buttonheading a img {display: none;}
+.buttonheading a {display: block; width: 16px; height: 16px; margin-left: 2px; opacity: 0.5;}
+.buttonheading a:hover, .buttonheading a:focus {opacity: 1;}
+.buttonheading a[title=PDF] {background: url(/jmc-assets/icons/article-1.png) 0 -100px;}
+.buttonheading a[title=PDF]:hover {background-position: 0 0;}
+.buttonheading a[title=Print] {background: url(/jmc-assets/icons/article-1.png) -100px -100px;}
+.buttonheading a[title=Print]:hover {background-position: -100px 0;}
+.buttonheading a[title=Email] {background: url(/jmc-assets/icons/article-1.png) -200px -100px;}
+.buttonheading a[title=Email]:hover {background-position: -200px 0;}
+/* admin edit button */
+.buttonheading .hasTip a {background: url(/jmc-assets/icons/article-1.png) -300px -100px;}
+.buttonheading .hasTip a:hover {background-position: -300px 0;}
+
+/* article title if enabled */
+td.contentheading {font-weight: bold; font-size: 16px;}
+td.contentheading a, td.contentheading a:visited {}
+
+ /* written by */
+.contentpaneopen span.small {font-size: 11px; color: #666;}
+/* publish date */
+td.createdate {font-size: 11px; color: #999; height: 36px;}
+/* edit date */
+td.modifydate {font-size: 11px; color: #999;}
+
+/* 'read more' links */
+.readon, .readon:visited {
+    display: inline-block;
+    color: white;
+    margin-top: 9px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 12px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.7);
+    background: #666;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.readon:hover, .readon:active {
+    /* important allows for the default state to be reset without affecting this hover */
+    background: #333 !important;
+}
+
+/* 'more articles' list at the bottom */
+div.blog_more {margin: 18px 0;} /* entire section */
+div.blog_more strong {} /* heading */
+div.blog_more ul {margin: 0 40px 0;}
+
+/* prev and next links at the bottom of single articles */
+/* not the same as the blog - the blog nav lacks hooks to style */
+.contentpaneopen table.pagenav th {background: transparent; border: 0;} /* prev and next are both in th's */
+.contentpaneopen table.pagenav td {border: 0;} /* prevent inheritance - this td is just used for spacing */
+.contentpaneopen .pagenav a, .contentpaneopen .pagenav a:visited {text-decoration: none;}
+
+
+
+/* ---------------------------------------------- */
+/* ------ CATEGORY BLOG & FRONT PAGE ------------ */
+/* ---------------------------------------------- */
+
+/* menu item page title */
+div.componentheading {
+margin: 0 0 18px;
+border-bottom: 2px solid #ddd;
+color: #999;
+}
+
+/* columned article headings */
+td.article_column td.contentheading {font-size: 14px; margin-bottom: 19px;}
+
+/* leftmost blog column */
+td.article_column {padding: 0;}
+
+/* other blog columns */
+td.article_column.column_separator {padding: 0 0 0 18px;}
+
+/* horizontal blog separators - bottom stripe on all blog articles, even lead */
+.blog span.article_separator {display: block; height: 2px; background: #ddd; margin: 18px 0;}
+/* columned blog article separators can be specified here if needed */
+.blog table span.article_separator {}
+
+
+
+/* ---------------------------------------------- */
+/* ------ CATEGORY LIST ------------------------- */
+/* ---------------------------------------------- */
+td.sectiontableheader {text-align: left; padding: 5px; width: auto;}
+td.sectiontableheader a img {margin-left: 10px; position: relative; top: 2px;}
+tr.sectiontableentry1 a, tr.sectiontableentry2 a {}
+td.contentdescription {width: 100%;} /* Needed to fill the available space in IE8 */
+
+
+
+/* ---------------------------------------------- */
+/* ------ POLL RESULTS PAGE --------------------- */
+/* ---------------------------------------------- */
+/* without #poll, some of these apply to the module also */
+#poll {width: 100%;}
+#poll #id {width: auto !important; margin: 0 0 20px 20px;}
+#poll .pollstableborder {width: 100%; border-bottom: 1px solid #ccc;}
+#poll .pollstableborder td {padding: 9px !important;}
+.pollstableborder th {padding-bottom: 18px;}
+.pollstableborder th img {display: none;}
+.pollstableborder {width: auto;}
+.smalldark {font-size: 85%;} /* info at the bottom */
+
+/* !NOTE! - multiple pages use these layout elements */
+/* changing them here will also cause changes on the CatList page */
+/* Polls use .sectiontableentry0 & 1, while CatList uses 1 & 2 */
+.sectiontableentry0 td, .sectiontableentry1 td, .sectiontableentry2 td {
+    border: 0 !important;
+    background: none !important;
+    font-size: 100% !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    padding: 9px !important;
+    font-weight: normal !important;
+}
+.sectiontableentry0 td, .sectiontableentry2 td {background: #eee !important;}
+
+
+
+/* ---------------------------------------------- */
+/* ------ ARCHIVE LIST -------------------------- */
+/* ---------------------------------------------- */
+#archive-list {margin: 18px 0 0 0;}
+#archive-list li {padding: 18px;}
+#archive-list li.row1 {}
+#archive-list li.row2 {background: #eee;}
+#archive-list h4 {}
+#archive-list .metadata {margin: 9px 0 0; font-size: 11px; font-weight: normal; color: #666;}
+#archive-list .metadata span.created-date {}
+#archive-list .metadata span.author {float: right;}
+#archive-list div.intro {margin-top: 9px;}
+
+
+
+/* ------------------------ */
+/* --- CC BOARD STYLING --- */
+/* ------------------------ */
+/* ccb's css prefixes the classes with the elements, so we need to also */
+table.ccbnormaltable {font-size: 12px;} /* the main tables */
+td.ccbheaderrow table.ccbnormaltable td {padding: 5px;} /* tds containing the menu and user info */
+td.ccbheaderusername {font-size: 13px;} /* user info text */
+td.ccbheaderusername small {font-size: 10px;} /* user info last visit text */
+td.ccblinetop {padding: 0px 4px;} /* topic list tds */
+td.ccbtpkmenu {padding: 18px 0px;} /* new topic button's containing td */
+/* color bars */
+td.ccbtopleftgray {background: #777 url(/jmc-assets/ccboard-skins/rhleft-mc-1.png) !important;}
+td.ccbtopmiddlegray {background: #777 url(/jmc-assets/ccboard-skins/rh-mc-1.png) !important;}
+td.ccbtoprightgray {background: #777 url(/jmc-assets/ccboard-skins/rhright-mc-1.png) !important;}
+/* text & links inside the color bars */
+/* ccb colors this text with a span - so the default a underline will be a different color - hide it or recolor it */
+td.ccbtopmiddlegray a:hover {text-decoration: none !important;}
+
+
+
+/* -------------------------------------------- */
+/* --- MEMBER LANDING, 'MY NAME IS' STICKER --- */
+/* -------------------------------------------- */
+#component-wrap #my-name-is {
+    height: 262px;
+    position: relative; border-radius: 4px; overflow: hidden; margin: 0 0 10px 0;
+    background: url(/jmc-assets/misc/my-name-is.png) right no-repeat;/* default black suit */
+/*  background: url(/jmc-assets/misc/my-name-is-blue-polo.png) right no-repeat; /* blue polo shirt */
+/*  background: url(/jmc-assets/misc/my-name-is-female.png) right no-repeat; /* female suit */
+/*  background: url(/jmc-assets/misc/my-name-is-gray-t.png) right no-repeat; /* gray t-shirt */
+/*  background: url(/jmc-assets/misc/my-name-is-medical.png) right no-repeat; /* medical lab coat */
+/*  background: url(/jmc-assets/misc/my-name-is-tan-sweater.png) right no-repeat; /* tan sweater */
+/*  background: url(/jmc-assets/misc/my-name-is-worker.png) right no-repeat; /* general worker */
+}
+#component-wrap #my-name-is .info {
+    position: absolute; right: 13px; top: 95px;
+    width: 350px; height: 135px; overflow: hidden; text-align: center;
+}
+#component-wrap #my-name-is h2 {
+    font: 30px 'Comic Sans MS', cursive; color: #555; margin: 0;
+}
+#component-wrap #my-name-is h3 {
+    font: 16px 'Comic Sans MS', cursive; color: #666; margin: 10px 0 0;
+}
+#component-wrap #my-name-is h4 {
+    font: 16px 'Comic Sans MS', cursive; color: #666; margin: 0; padding: 0;
+    position: absolute; bottom: 0; left: 0; width: 350px; text-align: center;
+}
+#component-wrap #profile-update-message {
+    position: absolute; left: 0px; bottom: 15px; margin: 0; padding: 5px 10px;
+    font-size: 12px; color: #999; border-radius: 0 4px 4px 0; background: rgba(0,0,0,0.8);
+}
+#component-wrap #profile-update-message a:link, #component-wrap #profile-update-message a:visited {color: white;}
+#component-wrap #profile-update-message a:hover, #component-wrap #profile-update-message a:active {color: white;}
+
+
+
+/* ----------------------------------- */
+/* --- MEMBER LANDING, QUICK LINKS --- */
+/* ----------------------------------- */
+#component-wrap .member-landing-quick-links {
+    border-radius: 4px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #bbb;
+    margin: 0 0 10px 0; padding: 10px 5px;
+    background: #eee url(/jmc-assets/gradients-v/white-top-small-90.png) repeat-x;
+}
+#component-wrap .member-landing-quick-links ul {margin: 0; padding: 0; list-style: none; overflow: hidden;}
+#component-wrap .member-landing-quick-links ul li {float: left; border-left: 1px solid #bbb; padding: 0px 5px;}
+#component-wrap .member-landing-quick-links ul li:first-child {border: 0;}
+
+
+
+/* --------------------------------- */
+/* ------ HOME PAGE TEMPLATE ------- */
+/* --------------------------------- */
+#component-wrap .home-template-01 {}
+#component-wrap .home-template-01 .home-main {}
+#component-wrap .home-template-01 .home-sub {
+    background: #fff url(/jmc-assets/gradients-v/black-bottom-20.png);
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.1) inset;
+    border-radius: 4px;
+    width: 340px;
+    height: 425px;
+    float: left;
+    margin-left: 20px;
+    position: relative;
+    overflow: hidden;
+}
+#component-wrap .home-template-01 .home-sub.sub1 {margin-left: 0;}
+#component-wrap .home-template-01 .home-sub .pad {padding: 18px;}
+#component-wrap .home-template-01 .home-sub h6 a {
+    position: absolute;
+    right: 18px; bottom: 18px;
+    display: block;
+    background: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    box-shadow: 0px 1px 1px #999;
+}
+#component-wrap .home-template-01 .home-sub h6 a:hover {background: #333; box-shadow: 0 1px 0 rgba(255,255,255,0.5); color: white;}
+
+
+
+/* ------------------------------------------ */
+/* ------ TEMPLATE-SPECIFIC OVERRIDES ------- */
+/* ------------------------------------------ */
+
+#slider {border-bottom: 1px solid #333;}
+#header {border-bottom: 1px solid #333;}
+
+/* top bar */
+#over-header-1 {
+    height: 50px;
+    background: #333;
+}
+
+/* --- site search & member (quick) search --- */
+#over-header-wrap .moduletable.mc-search, #over-header-wrap .moduletable.mc-quicksearch {overflow: hidden; width: 250px; margin: 10px 0px 0px 10px;}
+.moduletable.mc-search div, #over-header-wrap .moduletable.mc-quicksearch div {
+    border: 0;
+    background: #E6E6E6;
+    height: 30px;
+}
+#over-header-wrap .moduletable.mc-search .inputbox, #over-header-wrap .moduletable.mc-quicksearch .inputbox {
+    padding: 0px 4px 0px 9px;
+    margin: 5px 0px 0px;
+    width: 78%;
+    height: 20px;
+    line-height: 25px;
+    background: transparent;
+    color: #333;
+}
+#over-header-wrap .moduletable.mc-search a, #over-header-wrap .moduletable.mc-quicksearch a {
+    background: url(/jmc-assets/icons/magnify-black.png);
+    color: white;
+    font-size: 11px;
+    position: absolute; right: 9px; top: 6px;
+    text-decoration: none;
+}
+#over-header-wrap .moduletable.mc-search a:hover, #over-header-wrap .moduletable.mc-quicksearch a:hover {background-position: left bottom;}
+
+/* top bar menu */
+#over-header-wrap .simple-menu {border: 0; margin: 16px 0px 0px 0px;}
+#over-header-wrap .simple-menu li {border-color: #555;}
+#over-header-wrap .simple-menu li:first-child {border: 0;}
+#over-header-wrap .simple-menu li a, #over-header-wrap .simple-menu li a:visited {color: #E6E6E6;}
+#over-header-wrap .simple-menu li a:hover, #over-header-wrap .simple-menu li a:active, #over-header-wrap .simple-menu li a:focus {color: white;}
+
+
+        /* header */
+        #header {
+            height: 150px;
+            background: white;
+            position: relative;
+        }
+        
+        #header .moduletable.mc-login {
+            background: #eee;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.33);
+            border-radius: 0px;
+            border: 1px solid white;
+            width: 362px; height: 82px;
+            right: 15px; top: 30px;
+        }
+        
+/* slider */
+.moduletable.mc-slider {border-top: 1px solid #333; border-bottom: 1px solid #333;}
+        
+/* menu */
+#under-header-2 {
+    height: 50px;
+    background: #333;
+}
+
+#middle-section-wrap {border-top: 1px solid #333;}
+
+#site-wrap {
+    width: 980px;
+    margin: 0px auto;
+    /* to make absolute positioning possible, if needed */
+    position: relative;
+    background: white;
+    box-shadow: 0px -30px 90px rgba(0,0,0,0.3);
+}
+
+#footer {background: #333; color: #E6E6E6; font-size: 12px; padding: 20px 20px 30px;}
+
+.mc-footer-info {
+    text-align: right;
+}
+
+.mc-footer-mission {width: 400px;}
+
+#pbmc-wrap {width: 980px; margin: 0 auto; padding: 0; position: relative;}
+#pbmc {
+    position: absolute;
+    margin: 0;
+    right: 14px; bottom: 10px;
+    background-image: url(/jmc-assets/pbmc/white.png);
+}
+ 
+
+/* --------------------------------------- */
+/* ------ QUICK CHANGE AREA -------------- */
+/* --------------------------------------- */
+/* -- note: you will not find fonts here - */
+
+/* position the logo */
+.mc-logo-link {margin: 22px 0px 0px 2px;}
+
+/* --------------------- */
+/* --- primary color --- */
+/* --------------------- */
+
+h1, a
+{
+    color: #104672;
+}
+        
+.readon, .readon:visited, /* read more */
+/** Added for Forgot UN and PW hover **/
+#content-padding #form-login .forgot-username:hover,
+#content-padding #form-login .forgot-password:hover,
+/** End UN and PW hover */
+#content-padding #form-login input.button:hover,  /* login page button */
+.moduletable.button-list ul li a, .moduletable.button-list ul li a:visited, /* cta button list */
+#mc-search-form .mc-button:hover, /* search page button */
+#site-top-2 #mcSimpleLogin, #site-top-2 #mcSimpleLogin:visited, /* header login button */
+#under-header-2, /* menu bar */
+#component-wrap #my-name-is
+{
+    background-color: #104672;
+}
+
+/* community forum's bars */
+/* here because they need !important but setting !important above causes issues with .readon:hover */
+/* if setting this to the primary color is undesirable, #808080 is a good gray choice */
+td.ccbtopleftgray, td.ccbtopmiddlegray, td.ccbtoprightgray
+{
+    background-color: #808080 !important;
+}
+
+
+/* --------------------------------- */
+/* --- other colors & treatments --- */
+/* --------------------------------- */
+
+h2 {
+    color: #999999;
+}
+
+/* the background of the site */
+#bkg {
+    background: #F0EFE3;
+}
+
+/* side module background color */
+.side-bar .moduletable {background: #E6E6E6;}
+
+/* side module title */
+.side-bar .moduletable h3:first-child {color: #333; border-color: #333;}
+
+/* pbmc : white black or gray */
+#pbmc {background-image: url(/jmc-assets/pbmc/white.png);}
+
+.mc-footer-mission a {color: #E6E6E6;}
+
+
+
+
+
+
+
+
+/* ----------------------------------- */
+/* ------ THE END -------------------- */
+/* ----------------------------------- */

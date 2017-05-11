@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Events</title>
+
+	<link rel="stylesheet" type="text/css" href="files/style.css">
+    
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="container">
+				<a href="index.html"><img class="logo" src="files/pnacac.png" alt="PNACAC" /></a>
+				<div class="login" style="line-height:0px;">
+					<p class="username">	
+				  		<label>Username</label>
+						<input type="text" name="username" class="inputbox" size="18" autocomplete="off" spellcheck="false">
+				    </p>
+				  	<input class="loginbutton button" type="submit" name="Submit" value="Login">
+				  	<p class="password">
+						<label>Password&nbsp;</label>
+						<input type="password" name="passwd" class="inputbox" size="18" autocomplete="off" spellcheck="false">	
+				  	</p>
+					</div>
+			</div>
+		</div>
+
+		<div id="nav">
+			<div class="container">
+				<a href="index.html" class="item">
+					Home
+				</a>
+				<a href="about.html" class="item">
+					About
+				</a>
+				<a href="membership.html" class="item">
+					Membership
+				</a>
+				<a href="events.html" class="item selected">
+					Events
+				</a>
+				<a href="faq.html" class="item">
+					FAQ
+				</a>
+				<a href="contact.html" class="item">
+					Contact
+				</a>
+				<div class="search">
+					<input type="text">
+					<input type="button" value="Search">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div id="left">
+				<div class="sidebox">
+					<h3>View as</h3>
+					<a href="events.html"><div>Calendar</div></a><hr>
+  					<a href="#"><div>Map</div></a>
+				</div>
+			</div>
+			<div id="body">
+				
+
+
+				<div>
+				  <div id="map">
+<script>
+    function initMap() {
+    	var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 47.6062, lng: -122.3321},
+          zoom: 6
+        });
+
+
+
+    //Events as Markers
+
+        //First Marker
+        var label1 = '1'
+        var marker1 = new google.maps.Marker({
+    	position: {lat: 47.0403, lng: -122.8154},
+    	map: map,
+    	title: 'Saint Martins University',
+    	label: label1
+  });
+        //Second Marker
+        var label2 = '2'
+        var marker2 = new google.maps.Marker({
+    	position: {lat: 44.8508, lng: -123.2401},
+    	map: map,
+    	title: 'Western Oregon University',
+    	label: label2
+  });
+
+    //Info Windows for events
+
+    	//First Marker info window content
+      	var contentString1 = '<div id="content">'+
+	      '<div id="siteNotice">'+
+	      '</div>'+
+	      '<h1 id="firstHeading" class="firstHeading">2016 Annual Conference</h1>'+
+	      '<div id="bodyContent">'+
+	      '<p>Join us for the 2016 Annual Conference at Saint Martin&apos;s University and the 50th Anniversary Celebration of PNACAC!<br/>'+
+	      '<a href="#">View more info</a>'+
+	      '<p>Wed May 25, 2016 7:30 AM - Fri May 27, 2016 12:00 PM<br/>'+
+	      'Location: Saint Martin&apos;s University  - <a target="_blank" href="https://www.google.com/maps/place/Saint+Martin&apos;s+'+
+	      'University/@47.0403448,-122.817622,17z/data=!3m1!4b1!4m5!3m4!1s0x54910b402b3641b5:0xfed01852e2b304df!8m2!3d47.'+
+	      '0403412!4d-122.8154333">Get directions</a></p>'+
+	      '</div>'+
+	      '</div>';
+
+	    //First Marker info window content assign 
+		var infowindow1 = new google.maps.InfoWindow({
+		    content: contentString1
+		  });
+
+	    //First Marker OnClick open info window 
+		marker1.addListener('click', function() {
+			infowindow2.close(map,marker1);
+			infowindow1.open(map, marker1);
+		  });
+
+    
+
+        //Second Marker info window content
+      	var contentString2 = '<div id="content">'+
+	      '<div id="siteNotice">'+
+	      '</div>'+
+	      '<h1 id="firstHeading" class="firstHeading">Western Oregon University</h1>'+
+	      '<div id="bodyContent">'+
+	      '<p>Join us June 19 - 24, 2016 for a tour of twelve'+
+	      'colleges & universities in Western Oregon!</p>'+
+	      '<p>Sun Jun 19, 2016 4:00 PM - Fri Jun 24, 2016 6:00 PM</p>'+
+	      'Location: Western Oregon - <a href="https://www.google.com/maps?saddr&daddr=Western+Oregon&hl=en">Get directions</a>'+
+	      '</div>'+
+	      '</div>';
+
+	    //First Marker info window content assign 
+		var infowindow2 = new google.maps.InfoWindow({
+		    content: contentString2
+		  });
+
+	    //Second Marker OnClick open info window 
+		marker2.addListener('click', function() {
+			infowindow1.close(map,marker2);
+			infowindow2.open(map, marker2);
+		  });
+
+
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+</div>
+				
+				</div>
+			
+				<p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+
+
+			</div>
+			<div id="right">
+				<div class="sidebox">
+					<h3>Legend</h3>
+					<p><strong>&Pscr;:&nbsp;</strong>Member-only event</p>
+					<p><strong>&dollar;:&nbsp;</strong>Paid Event</p>
+					<strong>On the Map:</strong>
+					<p>1&nbsp;2&nbsp;3&nbsp; Order of Events</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p>&copy; Pacific Northwest Association for College Admission Counseling
+				<br>PO Box 12474 Mill Creek, WA 98082 | Email: <a href="mailto:eapnacac@gmail.com">eapnacac@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="files/scripts.js"></script>
+</body>
+
+</html>

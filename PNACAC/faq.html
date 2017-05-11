@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FAQ</title>
+
+	<link rel="stylesheet" type="text/css" href="files/style.css">
+	<style>
+	button.accordion {
+    background-color: #E6E6E6;
+    color: #104672;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+	margin-bottom: 5px;
+	box-sizing: border-box; 
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;  
+}
+</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="container">
+				<a href="index.html"><img class="logo" src="files/pnacac.png" alt="PNACAC" /></a>
+				<div class="login" style="line-height:0px;">
+					<p class="username">	
+				  		<label>Username</label>
+						<input type="text" name="username" class="inputbox" size="18" autocomplete="off" spellcheck="false">
+				    </p>
+				  	<input class="loginbutton button" type="submit" name="Submit" value="Login">
+				  	<p class="password">
+						<label>Password&nbsp;</label>
+						<input type="password" name="passwd" class="inputbox" size="18" autocomplete="off" spellcheck="false">	
+				  	</p>
+					</div>
+			</div>
+		</div>
+
+		<div id="nav">
+			<div class="container">
+				<a href="index.html" class="item">
+					Home
+				</a>
+				<a href="about.html" class="item">
+					About
+				</a>
+				<a href="membership.html" class="item">
+					Membership
+				</a>
+				<a href="events.html" class="item">
+					Events
+				</a>
+				<a href="faq.html" class="item selected">
+					FAQ
+				</a>
+				<a href="contact.html" class="item">
+					Contact
+				</a>
+				<div class="search">
+					<input type="text">
+					<input type="button" value="Search">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<div id="left">
+			</div>
+			<div id="body">
+				<h1>FAQ</h1>
+				<button class="accordion">How can I become more involved with PNACAC?</button>
+				<div class="panel">
+					<p>This is the answer to the first question</p>
+				</div>
+				<button class="accordion">Are there any other organizations that are similar to PNACAC?</button>
+				<div class="panel">
+					<p>This is the answer to the second question</p>
+				</div>
+				<button class="accordion">How do I get PNACAC to sponsor my event?</button>
+				<div class="panel">
+					<p>This is the answer to the fourth question</p>
+				</div>
+				<button class="accordion">As a non-member (a student or a parent), what resources are available to me?</button>
+				<div class="panel">
+					<p>This is the answer to the third question</p>
+				</div>
+				<button class="accordion">As a member (college admissions counselor), what resources are available to me?</button>
+				<div class="panel">
+					<p>This is the answer to the fourth question</p>
+				</div>
+				<button class="accordion">Why is there a membership for college institutions if the organization's aim is college admissions?</button>
+				<div class="panel">
+					<p>This is the answer to the fifth question</p>
+				</div>
+				<button class="accordion">How does your organization advertise its services to your audience?</button>
+				<div class="panel">
+					<p>This is the answer to the fifth question</p>
+				</div>
+				<button class="accordion">Why do members pay for Summer College Tours?</button>
+				<div class="panel">
+					<p>This is the answer to the fifth question</p>
+				</div>
+				<script>
+				var acc=document.getElementsByClassName("accordion");
+				var i;
+
+				for (i=0; i< acc.length; i++)
+				{
+					acc[i].onclick=function()
+					{
+						this.classList.toggle("active");
+						this.nextElementSibling.classList.toggle("show");
+					}
+				}
+				</script> 
+			</div>
+			<div id="right">
+				<div class="sidebox">
+					<p>For answers to general questions, you can contact our Executive Assistant: <br>
+					<b>Ann Nault</b><br>
+					<a href="mailto:eapnacac@gmail.com">eapnacac@gmail.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p>&copy; Pacific Northwest Association for College Admission Counseling
+				<br>PO Box 12474 Mill Creek, WA 98082 | Email: <a href="mailto:eapnacac@gmail.com">eapnacac@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="files/scripts.js"></script>
+</body>
+
+</html>
